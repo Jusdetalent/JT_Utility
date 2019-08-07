@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="JT_Utility" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/JT_Utility" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/JT_Utility" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+			<Target title="Unix">
+				<Option output="bin/Unix/JT_Utility" prefix_auto="1" extension_auto="1" />
+				<Option object_output=".unix-objs" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+			</Target>
+			<Target title="WinLibrary">
+				<Option output="HN_Utility" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Linker>
+			<Add library="pthread" />
+		</Linker>
+		<Unit filename="HN_DateTime/HN_Clock.cpp" />
+		<Unit filename="HN_DateTime/HN_Clock.hpp" />
+		<Unit filename="HN_DateTime/HN_Date.cpp" />
+		<Unit filename="HN_DateTime/HN_Date.hpp" />
+		<Unit filename="HN_DateTime/HN_Interval.cpp" />
+		<Unit filename="HN_DateTime/HN_Interval.hpp" />
+		<Unit filename="HN_DateTime/HN_Period.cpp" />
+		<Unit filename="HN_DateTime/HN_Period.hpp" />
+		<Unit filename="HN_DateTime/HN_Ticks.cpp" />
+		<Unit filename="HN_DateTime/HN_Ticks.hpp" />
+		<Unit filename="HN_DateTime/HN_Time.cpp" />
+		<Unit filename="HN_DateTime/HN_Time.hpp" />
+		<Unit filename="HN_DateTime/HN_TimePoint.cpp" />
+		<Unit filename="HN_DateTime/HN_TimePoint.hpp" />
+		<Unit filename="HN_Process/HN_Thread.cpp" />
+		<Unit filename="HN_Process/HN_Thread.hpp" />
+		<Unit filename="main.cpp">
+			<Option target="Debug" />
+			<Option target="Release" />
+			<Option target="Unix" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
