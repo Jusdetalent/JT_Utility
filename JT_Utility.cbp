@@ -61,6 +61,8 @@
 		<Unit filename="HN_DateTime/HN_Time.hpp" />
 		<Unit filename="HN_DateTime/HN_TimePoint.cpp" />
 		<Unit filename="HN_DateTime/HN_TimePoint.hpp" />
+		<Unit filename="HN_Path/HN_File.cpp" />
+		<Unit filename="HN_Path/HN_File.hpp" />
 		<Unit filename="HN_Process/HN_Thread.cpp" />
 		<Unit filename="HN_Process/HN_Thread.hpp" />
 		<Unit filename="main.cpp">

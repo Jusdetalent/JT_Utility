@@ -1,0 +1,11 @@
+
+echo "Configuration ..."
+
+# Build require object folders
+mkdir bin -p
+mkdir objs -p
+mkdir objs/HN_DateTime -p
+mkdir objs/HN_Process -p
+mkdir objs/HN_Path -p
+
+echo "Pret pou la compilation, taper make et appuiyer sur enter."

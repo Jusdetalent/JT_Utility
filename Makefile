@@ -15,10 +15,13 @@ DATETIME_OBJ_DIR = objs/HN_DateTime/
 DATETIME_DIR = HN_DateTime/
 PROCESS_OBJ_DIR = objs/HN_Process/
 PROCESS_DIR = HN_Process/
+PATH_OBJ_DIR = objs/HN_Path/
+PATH_DIR = HN_Path/
 
 # Main objects
 OBJ = $(DATETIME_OBJ_DIR)HN_Clock.o $(DATETIME_OBJ_DIR)HN_Date.o $(DATETIME_OBJ_DIR)HN_Interval.o $(DATETIME_OBJ_DIR)HN_Period.o 
 OBJ+= $(DATETIME_OBJ_DIR)HN_Ticks.o $(DATETIME_OBJ_DIR)HN_Time.o $(DATETIME_OBJ_DIR)HN_TimePoint.o  $(PROCESS_OBJ_DIR)HN_Thread.o 
+OBJ+= $(PATH_OBJ_DIR)HN_File.o 
 
 # Assemblate link objects
 LINKOBJ = $(OBJ) 
@@ -52,13 +55,22 @@ $(DATETIME_OBJ_DIR)HN_TimePoint.o: $(DATETIME_DIR)HN_TimePoint.cpp
 # Build process objects
 $(PROCESS_OBJ_DIR)HN_Thread.o: $(PROCESS_DIR)HN_Thread.cpp
 	$(CC) -c $(PROCESS_DIR)HN_Thread.cpp -o $(PROCESS_OBJ_DIR)HN_Thread.o $(CXXFLAGS)
+
+# Build path objects
+$(PATH_OBJ_DIR)HN_File.o: $(PATH_DIR)HN_File.cpp
+	$(CC) -c $(PATH_DIR)HN_File.cpp -o $(PATH_OBJ_DIR)HN_File.o $(CXXFLAGS)
 	
 # Perform clean operation
 clean:
 	rm $(BIN) $(OBJ)
 
 install:
+	mkdir /usr -p
+	mkdir /usr/local -p
+	mkdir /usr/local/lib -p
 	cp -f $(BIN) /usr/local/lib/libHN_Utility.a
+	
+	mkdir /usr/local/include -p
 	mkdir /usr/local/include/HN_Utility -p
 	mkdir /usr/local/include/HN_Utility/HN_DateTime -p
 	cp -f $(DATETIME_DIR)HN_Clock.hpp /usr/local/include/HN_Utility/HN_DateTime/HN_Clock.hpp
@@ -71,5 +83,8 @@ install:
 	
 	mkdir /usr/local/include/HN_Utility/HN_Process -p
 	cp -f $(PROCESS_DIR)HN_Thread.hpp /usr/local/include/HN_Utility/HN_Process/HN_Thread.hpp
+	
+	mkdir /usr/local/include/HN_Utility/HN_Path -p
+	cp -f $(PATH_DIR)HN_File.hpp /usr/local/include/HN_Utility/HN_Path/HN_File.hpp
 	
 	
